@@ -3,16 +3,20 @@
 <Screen>:
     painter: painter
 
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    AsyncImage:
+        allow_stretch: True
+        source: "https://images-na.ssl-images-amazon.com/images/I/71yJA+kwzfL._UX250_.jpg"
+
     PaintWidget:
         id: painter
         size: root.size
-
-        #canvas:
-        #    Color:
-        #        rgb: 1, 1, 0
-        #    Ellipse:
-        #        pos: self.pos
-        #        size: self.size
 
     AnchorLayout:
         anchor_x: 'left'
@@ -22,4 +26,4 @@
             size_hint: .1, .1
             text: "Clear"
 
-            on_release: app.on_clear()
+            on_press: app.on_clear()

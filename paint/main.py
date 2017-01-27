@@ -60,7 +60,7 @@ class MainApp(App):
         self.screen = Screen()
         return self.screen
 
-    def on_clear(self, *args):
+    def on_clear(self):
         self.screen.painter.canvas.clear()
 
 
