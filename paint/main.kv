@@ -1,7 +1,10 @@
 #:kivy 1.0.9
 
 <Screen>:
+    painter: painter
+
     PaintWidget:
+        id: painter
         size: root.size
 
         #canvas:
@@ -18,3 +21,5 @@
         Button
             size_hint: .1, .1
             text: "Clear"
+
+            on_release: app.on_clear()
