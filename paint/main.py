@@ -40,11 +40,12 @@ class PaintWidget(Widget):
         self.line.points += [touch.x, touch.y]
 
     def on_touch_up(self, touch):
-        self.line.points += [touch.x, touch.y]
         with self.canvas:
             radius = self.start_circle.size[0] / 2
             pos = touch.x - radius, touch.y - radius
             Ellipse(pos=pos, size=(radius * 2, radius * 2))
+        self.start_circle = None
+        self.line = None
 
 
 class MainApp(App):
